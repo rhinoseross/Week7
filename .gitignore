@@ -1,0 +1,16 @@
+# Ignore database files and runtime artifacts
+db_data/
+docker_database/
+*.sock
+*.pem
+
+# Composer / Node
+node_modules/
+vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
