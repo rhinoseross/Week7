@@ -16,9 +16,6 @@ pipeline {
     stage('Pull , build and Run dockerfile ') {
       steps {
         sh '''
-          docker stop Week7 || true
-          docker rm Week7 || true
-          docker rmi Rhinoseross/Week7 || true
           docker build -t Rhinoseross/Week7 .
           docker compose up -d
         '''
