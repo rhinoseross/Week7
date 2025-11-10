@@ -1,0 +1,40 @@
+// Jenkinsfile used in this exercise — point the job at **your fork** of myapp6
+pipeline {
+  agent any
+
+  environment {
+    DOCKERHUB = credentials('DockerHub')
+  }
+
+  stages {
+    stage('Docker Login') {
+      steps {
+        sh 'echo "$DOCKERHUB_PSW" | docker login -u "$DOCKERHUB_USR" --password-stdin'
+      }
+    }
+
+    stage('Pull , build and Run dockerfile ') {
+      steps {
+        sh '''
+          docker stop myapp6 || true
+          docker rm myapp6 || true
+          docker rmi Rhinoseross/Week7 || true
+          docker build -t Rhinoseross/Week7 .
+          docker compose up -d
+        '''
+      }
+    }
+
+    stage('Run Tests') {
+      steps {
+        echo "done testing"
+      }
+    }
+
+    stage('cleaning'){
+      steps{
+        sh 'docker compose down || true'
+      }
+    }
+  }
+}
