@@ -16,7 +16,7 @@ pipeline {
     stage('Pull , build and Run dockerfile ') {
       steps {
         sh '''
-          docker build -t Rhinoseross/Week7 .
+          docker build -t rpgleonce/Week7 .
           docker compose up -d
         '''
       }
