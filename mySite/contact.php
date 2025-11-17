@@ -10,7 +10,7 @@
 <?php include("includes/navigation.php");?>
 
 <div class="container" id="main-content">
-	<h2>Contact Ross2</h2>
+	<h2>Contact Ross3</h2>
 	<p>"Contact Ross" conten goes here.  I'll stick with teh "lorem ipsum" as well, so that the footer isn't immediately following this text.</p>
 
 	<p>
